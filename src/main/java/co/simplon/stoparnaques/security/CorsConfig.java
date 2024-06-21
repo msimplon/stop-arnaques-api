@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ConditionalOnProperty(value = "gameStation.cors.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(value = "stoparnaques.cors.enabled", havingValue = "true", matchIfMissing = true)
 public class CorsConfig implements WebMvcConfigurer {
 
     @Value("${stoparnaques.cors.allowedOrigins}")
