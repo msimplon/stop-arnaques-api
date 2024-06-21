@@ -16,7 +16,6 @@ import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.auth0.jwt.algorithms.Algorithm;
@@ -38,12 +37,6 @@ public class SecurityConfig implements WebMvcConfigurer {
     private String zoneId;
     @Value("${stoparnaques.security.jwt.secret}")
     private String secret;
-
-    @Value("${stoparnaques.cors.allowedOrigins}")
-    private String[] allowedOrigins;
-
-    @Value("${stoparnaques.cors.allowed-methods}")
-    private String[] allowedMethods;
 
     @Bean
     public SecurityFilterChain configure(HttpSecurity http)
@@ -110,14 +103,6 @@ public class SecurityConfig implements WebMvcConfigurer {
 	return new AuthHelper.Builder().algorithm(algorithm)
 		.passwordEncoder(encoder).issuer(issuer)
 		.expiration(tokenExpiration).build();
-    }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-	registry.addMapping("/**")
-		.allowedOrigins(allowedOrigins)
-		.allowedMethods("POST", "GET", "PUT",
-			"PATCH", "DELETE");
     }
 
     @Bean
