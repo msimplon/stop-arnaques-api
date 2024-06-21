@@ -32,8 +32,9 @@ build/
 !**/src/test/**/build/
 
 .vscode/
-!**/src/test/resources/application-dev.properties
-!**/src/main/resources/application-dev.properties
-!**/src/main/resources/application-prod.properties
-!**/secrets/secrets.properties
-!**/secrets/secrets-tests.properties
+application-dev.properties
+application-test.properties
+secrets*.properties
+properties.copy
+*.log*
+
