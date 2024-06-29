@@ -49,7 +49,8 @@ public class FormServiceImpl implements FormService {
 	Form form = new Form();
 	form.setSubject(inputs.getSubject());
 	form.setEmail(inputs.getEmail());
-	form.setIncidentNumber(inputs.getIncidentNumber());
+	form.setIncidentReference(
+		inputs.getIncidentReference());
 	form.setDetails(inputs.getDetails());
 
 	if ((inputs.getAttachement() != null)) {

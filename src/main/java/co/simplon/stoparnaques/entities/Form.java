@@ -16,8 +16,8 @@ public class Form extends AbstractEntity {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "incident_number")
-    private String incidentNumber;
+    @Column(name = "incident_reference")
+    private String incidentReference;
 
     @Column(name = "attachement")
     private String attachement;
@@ -49,12 +49,13 @@ public class Form extends AbstractEntity {
 	this.email = email;
     }
 
-    public String getIncidentNumber() {
-	return incidentNumber;
+    public String getIncidentReference() {
+	return incidentReference;
     }
 
-    public void setIncidentNumber(String incidentNumber) {
-	this.incidentNumber = incidentNumber;
+    public void setIncidentReference(
+	    String incidentReference) {
+	this.incidentReference = incidentReference;
     }
 
     public String getAttachement() {
@@ -84,7 +85,7 @@ public class Form extends AbstractEntity {
     @Override
     public String toString() {
 	return "{subject=" + subject + ", email=" + email
-		+ ", incidentNumber=" + incidentNumber
+		+ ", incidentReference=" + incidentReference
 		+ ", attachement=" + attachement
 		+ ", details=" + details + ", dispute="
 		+ dispute + "}";

@@ -7,7 +7,7 @@ public interface Form {
 
     String email();
 
-    String incidentNumber();
+    String incidentReference();
 
     MultipartFile attachement();
 

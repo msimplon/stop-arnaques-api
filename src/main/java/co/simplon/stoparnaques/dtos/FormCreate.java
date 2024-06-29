@@ -13,7 +13,7 @@ public class FormCreate {
     @NotNull
     private String email;
     @NotNull
-    private String incidentNumber;
+    private String incidentReference;
 
     @ImageType
     @ImageSize(maxValue = 2097122252L)
@@ -46,12 +46,13 @@ public class FormCreate {
 	this.email = email;
     }
 
-    public String getIncidentNumber() {
-	return incidentNumber;
+    public String getIncidentReference() {
+	return incidentReference;
     }
 
-    public void setIncidentNumber(String incidentNumber) {
-	this.incidentNumber = incidentNumber;
+    public void setIncidentReference(
+	    String incidentReference) {
+	this.incidentReference = incidentReference;
     }
 
     public MultipartFile getAttachement() {

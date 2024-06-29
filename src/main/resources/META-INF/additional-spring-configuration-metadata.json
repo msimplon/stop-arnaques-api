@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "stoparnaques-api.uploads.location",
+    "type": "java.lang.String",
+    "description": "A description for 'stoparnaques-api.uploads.location'"
+  },
+  {
+    "name": "stoparnaques.cors.allowedOrigins",
+    "type": "java.lang.String",
+    "description": "A description for 'stoparnaques.cors.allowedOrigins'"
+  },
+  {
+    "name": "stoparnaques.security.jwt.issuer",
+    "type": "java.lang.String",
+    "description": "A description for 'stoparnaques.security.jwt.issuer'"
+  }
+]}

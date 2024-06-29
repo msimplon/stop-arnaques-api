@@ -1,15 +1,9 @@
-/*
- * DDL = Data Definition Language
- * psql -h localhost -p 5432 -U postgres -d stoparnaques
- * \i schema.ddl.sql
- * \q
- */
-
-DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS articles;
-DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS users;
-
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS forms;
+DROP TABLE IF EXISTS disputes;
 
 CREATE TABLE categories (  
 	id SERIAL PRIMARY KEY,
@@ -39,17 +33,39 @@ CREATE TABLE roles (
 	constraint pk_role_id primary key(id)
 );
 
+
+
+
 CREATE TABLE users (
-	id SERIAL PRIMARY KEY,
+	id SERIAL,
 	first_name VARCHAR(300) NOT NULL,
 	last_name VARCHAR(300) NOT NULL,
-	username varchar(255) UNIQUE NOT NULL,
-	password varchar(60) NOT NULL,
-	role_id integer, 
-CONSTRAINT fk_role_id
-  	FOREIGN KEY (role_id)
-	REFERENCES roles(id)
+	username VARCHAR(300) UNIQUE NOT NULL,
+	password VARCHAR(1000) NOT NULL,
+	role_id INTEGER NOT NULL,
+    is_enabled BOOLEAN NOT NULL,
+	constraint pk_user_id primary key(id),
+	constraint fk_role_id 
+			foreign key (role_id)
+			references roles(id)
 );
 
 
+CREATE TABLE disputes (    
+	id SERIAL PRIMARY KEY,
+	label VARCHAR(150) NOT NULL
+);
 
+
+CREATE TABLE forms (  
+	id SERIAL PRIMARY KEY,
+    subject VARCHAR(300) NOT NULL,
+    email VARCHAR(300) UNIQUE NOT NULL,
+    incidentNumber VARCHAR(300) NOT NULL,
+	description VARCHAR(255) NOT NULL,
+	details VARCHAR(255) NOT NULL,
+    dispute_id integer NOT NULL,
+    CONSTRAINT fk_dispute_id 
+	    FOREIGN KEY (dispute_id)
+	    REFERENCES disputes(id)
+	);

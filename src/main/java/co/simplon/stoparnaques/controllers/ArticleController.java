@@ -22,6 +22,7 @@ import co.simplon.stoparnaques.dtos.ArticleView;
 import co.simplon.stoparnaques.services.ArticleService;
 import jakarta.validation.Valid;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/articles")
 public class ArticleController {
