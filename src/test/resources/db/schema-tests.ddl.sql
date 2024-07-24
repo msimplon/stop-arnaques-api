@@ -18,7 +18,6 @@ CREATE TABLE articles (
 	description text NOT NULL,
 	introduction text NOT NULL,
 	image_url VARCHAR(255) NOT NULL,
-	created_at TIMESTAMP NOT NULL,
 	date_of_publication date,
 	category_id integer NOT NULL,
 	CONSTRAINT fk_category_id
@@ -32,8 +31,6 @@ CREATE TABLE roles (
 	role_name VARCHAR(300) UNIQUE NOT null,
 	constraint pk_role_id primary key(id)
 );
-
-
 
 
 CREATE TABLE users (
@@ -61,11 +58,13 @@ CREATE TABLE forms (
 	id SERIAL PRIMARY KEY,
     subject VARCHAR(300) NOT NULL,
     email VARCHAR(300) UNIQUE NOT NULL,
-    incidentNumber VARCHAR(300) NOT NULL,
+    incidentReference VARCHAR(300) NOT NULL,
 	description VARCHAR(255) NOT NULL,
+	attachment VARCHAR(255) NOT NULL,
 	details VARCHAR(255) NOT NULL,
     dispute_id integer NOT NULL,
     CONSTRAINT fk_dispute_id 
 	    FOREIGN KEY (dispute_id)
 	    REFERENCES disputes(id)
 	);
+	

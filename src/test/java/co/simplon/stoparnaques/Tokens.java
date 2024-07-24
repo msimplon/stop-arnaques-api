@@ -1,9 +1,8 @@
-package co.simplon.itp3.stoparnaques;
+package co.simplon.stoparnaques;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-//
 @Component
 class Tokens {
 
@@ -13,11 +12,11 @@ class Tokens {
     @Value("${stoparnaques.tests.bad-issuer-token}")
     private String badIssuer;
 
-    @Value("${stoparnaques.tests.security.jwt.expiration}")
-    private String expired;
-
     @Value("${stoparnaques.tests.valid-admin-token}")
     private String admin;
+
+    @Value("${stoparnaques.tests.valid-user-token}")
+    private String user;
 
     String get(final String name) {
 	switch (name) {
@@ -25,10 +24,10 @@ class Tokens {
 	    return badSecret;
 	case "badIssuer":
 	    return badIssuer;
-	case "expired":
-	    return expired;
 	case "admin":
 	    return admin;
+	case "user":
+	    return user;
 	default:
 	    throw new IllegalArgumentException(
 		    "Unexpected value: " + name);

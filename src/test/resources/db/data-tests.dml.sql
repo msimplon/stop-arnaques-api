@@ -18,4 +18,4 @@ INSERT INTO roles
 
     INSERT INTO disputes (label)
 	VALUES 
-	('origine frauduleuse');
+	('origine frauduleuse','drop shipping', 'publicité');
