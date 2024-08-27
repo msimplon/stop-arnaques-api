@@ -7,6 +7,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import co.simplon.stoparnaques.configuration.AuthHelper;
 import co.simplon.stoparnaques.dtos.TokenInfo;
 import co.simplon.stoparnaques.dtos.UserCreate;
 import co.simplon.stoparnaques.entities.Role;
@@ -16,7 +17,6 @@ import co.simplon.stoparnaques.repositories.AuthRepository;
 import co.simplon.stoparnaques.repositories.RoleRepository;
 import co.simplon.stoparnaques.repositories.UserRepository;
 import co.simplon.stoparnaques.repositories.VerificationTokenRepository;
-import co.simplon.stoparnaques.security.AuthHelper;
 
 @Transactional(readOnly = true)
 @Service

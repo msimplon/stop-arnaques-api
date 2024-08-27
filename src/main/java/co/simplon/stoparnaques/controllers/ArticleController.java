@@ -63,7 +63,6 @@ public class ArticleController {
 	return service.getTop4LastAdded();
     }
 
-    @CrossOrigin
     @PatchMapping("/{id}")
     public void updateArticle(
 	    @ModelAttribute @Valid @PathVariable("id") Long id,

@@ -20,7 +20,7 @@ public interface ArticleView {
 
     String getCategoryName();
 
-//    Long getCategoryId();
+    Long getCategoryId();
 
     LocalDate getDate();
 

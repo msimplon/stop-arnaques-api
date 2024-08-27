@@ -1,4 +1,4 @@
-package co.simplon.stoparnaques.security;
+package co.simplon.stoparnaques.configuration;
 
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

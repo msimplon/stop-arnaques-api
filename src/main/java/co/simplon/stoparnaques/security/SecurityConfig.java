@@ -21,6 +21,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.auth0.jwt.algorithms.Algorithm;
 
+import co.simplon.stoparnaques.configuration.AuthHelper;
+
 @Configuration
 public class SecurityConfig implements WebMvcConfigurer {
 
