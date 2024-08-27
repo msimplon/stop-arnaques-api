@@ -3,7 +3,6 @@ package co.simplon.stoparnaques.controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -62,7 +61,6 @@ public class ArticleController {
 	return service.getTop4LastAdded();
     }
 
-    @CrossOrigin
     @PatchMapping("/{id}")
     public void updateArticle(
 	    @ModelAttribute @Valid @PathVariable("id") Long id,
